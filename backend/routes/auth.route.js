@@ -3,14 +3,18 @@ import {
   userSignUp,
   userLogin,
   userLogout,
+  checkAuth,
 } from "../controllers/auth.controller.js";
+import { protectRoute } from "../middleware/auth.middleware.js";
 
 const router = express.Router();
 
-router.get("/signup", userSignUp);
+router.post("/signup", userSignUp);
 
-router.get("/login", userLogin);
+router.post("/login", userLogin);
 
-router.get("/logout", userLogout);
+router.post("/logout", userLogout);
+
+router.get("/checkAuth", protectRoute, checkAuth);
 
 export default router;
