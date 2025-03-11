@@ -87,7 +87,7 @@ export const getLikedPosts = async (req, res) => {
   }
 };
 
-// @desc            Get current user's posts
+// @desc            Get user's posts
 // @route           GET /api/users/:username
 // @access          Private
 export const getUserPosts = async (req, res) => {
